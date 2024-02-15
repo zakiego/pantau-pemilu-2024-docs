@@ -11,7 +11,7 @@ const config: DocsThemeConfig = {
 	// },
 	// docsRepositoryBase: "https://github.com/shuding/nextra-docs-template",
 	footer: {
-		text: "Nextra Docs Template",
+		text: "Data Pemilu 2024",
 	},
 	head: <title>Data Pemilu 2024</title>,
 };

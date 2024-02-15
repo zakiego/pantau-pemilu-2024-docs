@@ -1,3 +1,6 @@
 {
-	"index": "Pendahuluan"
+	"index": {
+		"title": "Data Pemilu 2024",
+		"type": "page"
+	}
 }

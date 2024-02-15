@@ -13,6 +13,7 @@ const config: DocsThemeConfig = {
 	footer: {
 		text: "Nextra Docs Template",
 	},
+	head: <title>Data Pemilu 2024</title>,
 };
 
 export default config;

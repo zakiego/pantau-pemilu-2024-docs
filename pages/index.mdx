@@ -3,12 +3,14 @@
 Project ini adalah project untuk mengumpulkan data pemilu 2024. Data yang diambil adalah data dari website [https://pemilu2024.kpu.go.id](https://pemilu2024.kpu.go.id/)
 
 Di balik layar dikerjakan oleh:
+
 - [@zakiego](https://twitter.com/zakiego)
 - [@razanfawwaz](https://twitter.com/razanfawwaz)
 - [@mgilangjanuar](https://twitter.com/mgilangjanuar)
 - [@50HzPower](https://twitter.com/50HzPower)
 
 Didukung oleh:
+
 - [Kawal Pemilu](https://twitter.com/KawalPemilu_org)
 - [Nevacloud](https://twitter.com/NevacloudHQ)
 
@@ -22,8 +24,7 @@ Didukung oleh:
 - Data dari website KPU masih dalam proses, belum lengkap. Jadi, data yang diambil juga belum lengkap.
 - Data yang ada di database ini akan diupdate untuk mengikutin perkembangan data di website KPU.
 
-## Data 
-
+## Data
 
 Berikut adalah tabel yang tersedia di database ini:
 
@@ -38,12 +39,11 @@ Berikut adalah tabel yang tersedia di database ini:
 - [ ] Pemilihan Legislatif DPRD Kabupaten/Kota per TPS
 - [ ] Pemilihan Legislatif DPRD Kabupaten/Kota per Daerah Pemilihan (Dapil)
 
-
 ## Database
 
 > Penting!
 >
-> Data akan terus kami update seiring dengan perkembangan data di website KPU, dan dimasukkan ke dalam database ini. 
+> Data akan terus kami update seiring dengan perkembangan data di website KPU, dan dimasukkan ke dalam database ini.
 > Sedangkan file yang diunggah ke Google Drive belum bisa diupdate secara otomatis, jadi untuk mendapatkan data yang paling terkini, disarankan untuk menggunakan database langsung.
 >
 > Acuan ada pada kolom `updated_at` di setiap tabel, yang menunjukkan kapan data terakhir ditarik dari website KPU.
@@ -75,6 +75,18 @@ User: ropantau
 Password: WW0xV00xZ3pRbWhqTTA0ellq
 ```
 
+## API
+
+Selain itu, data ini juga bisa diakses melalui API. Namun baru terdapat satu endpoint yang bisa diakses dan baru berupa data TPS untuk Pemilihan Presiden dan Wakil Presiden.
+
+API dapat diakses di `https://pantau-api.razanfawwaz.dev/api/v1/ppwp?limit=10&offset=0`
+
+Parameter yang bisa digunakan adalah:
+
+- `limit` - Jumlah data yang ingin diambil
+- `offset`- Data yang ingin diambil dimulai dari data keberapa
+
+Pastikan untuk menggunakan parameter `limit` dikarenakan jika tidak digunakan, maka data tidak akan muncul.
 
 ## File
 

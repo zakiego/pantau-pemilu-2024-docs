@@ -1,5 +1,4 @@
 # Data Pemilu 2024
- 
 
 Project ini adalah project untuk mengumpulkan data pemilu 2024. Data yang diambil adalah data dari website [https://pemilu2024.kpu.go.id](https://pemilu2024.kpu.go.id/)
 
@@ -7,10 +6,15 @@ Di balik layar dikerjakan oleh:
 - [@zakiego](https://twitter.com/zakiego)
 - [@razanfawwaz](https://twitter.com/razanfawwaz)
 - [@mgilangjanuar](https://twitter.com/mgilangjanuar)
+- [@50HzPower](https://twitter.com/50HzPower)
 
-> Dokumentasi lengkap ditulis nanti ya, kurang tidur 😣
+Didukung oleh:
+- [Kawal Pemilu](https://twitter.com/KawalPemilu_org)
+- [Nevacloud](https://twitter.com/NevacloudHQ)
+
+> Dokumentasi lengkap akan segera diupdate ya!
 >
-> Kalu ada yang mau didiskusikan, bisa langsung DM ya 
+> Jika ada pertanyaan, silakan hubungi kami di Twitter.
 
 ## Catatan
 
@@ -18,11 +22,59 @@ Di balik layar dikerjakan oleh:
 - Data dari website KPU masih dalam proses, belum lengkap. Jadi, data yang diambil juga belum lengkap.
 - Data yang ada di database ini akan diupdate untuk mengikutin perkembangan data di website KPU.
 
+## Data 
+
+
+Berikut adalah tabel yang tersedia di database ini:
+
+- [x] Wilayah
+- [x] Partai
+- [x] Pemilihan Presiden dan Wakil Presiden per TPS
+- [x] Pemilihan Legislatif DPR per TPS
+- [x] Pemilihan Legislatif DPR per Daerah Pemilihan (Dapil)
+- [ ] Pemilihan Legislatif DPD per TPS
+- [ ] Pemilihan Legislatif DPRD Provinsi per TPS
+- [ ] Pemilihan Legislatif DPD per Daerah Pemilihan (Dapil)
+- [ ] Pemilihan Legislatif DPRD Kabupaten/Kota per TPS
+- [ ] Pemilihan Legislatif DPRD Kabupaten/Kota per Daerah Pemilihan (Dapil)
+
+
 ## Database
 
-Database yang diterapkan adalah PostgreSQL. Jika ingin mengaksesnya, Anda dapat menggunakan koneksi yang disediakan berikut:
+> Penting!
+>
+> Data akan terus kami update seiring dengan perkembangan data di website KPU, dan dimasukkan ke dalam database ini. 
+> Sedangkan file yang diunggah ke Google Drive belum bisa diupdate secara otomatis, jadi untuk mendapatkan data yang paling terkini, disarankan untuk menggunakan database langsung.
+>
+> Acuan ada pada kolom `updated_at` di setiap tabel, yang menunjukkan kapan data terakhir ditarik dari website KPU.
+> Sedangkan kolom `ts` adalah timestamp dari website KPU itu sendiri.
 
-`postgres://pantau:ZubQ7IHFn1sTCP8C8rgw3T24QIiJktb8@vps.zakiego.com:54325/pemilu_2024`
+Database yang digunakan adalah PostgreSQL. Berikut adalah kredensial untuk mengakses database ini.
+
+~`postgres://pantau:ZubQ7IHFn1sTCP8C8rgw3T24QIiJktb8@vps.zakiego.com:54325/pemilu_2024`~ (tidak lagi digunakan)
+
+Untuk akses melalui connection string, gunakan:
+
+`postgres://ropantau:WW0xV00xZ3pRbWhqTTA0ellq@query.kawalpemilu.org:54321/pantau2024`
+
+atau jika menggunakan psql, gunakan:
+
+```
+psql -h query.kawalpemilu.org -p 54321 -U ropantau -d pantau2024
+
+# lalu masukkan password
+```
+
+atau
+
+```
+Host: query.kawalpemilu.org
+Port: 54321
+Database: pantau2024
+User: ropantau
+Password: WW0xV00xZ3pRbWhqTTA0ellq
+```
+
 
 ## File
 

@@ -13,7 +13,13 @@ const config: DocsThemeConfig = {
 	footer: {
 		text: "Data Pemilu 2024",
 	},
-	head: <title>Data Pemilu 2024</title>,
+	head: (
+		<>
+			<title>Data Pemilu 2024</title>
+			{/* <meta property="og:title" content="Data Pemilu 2024" /> */}
+			<meta property="og:title" content="Data Pemilu 2024" />
+		</>
+	),
 };
 
 export default config;

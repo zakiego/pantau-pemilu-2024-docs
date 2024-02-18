@@ -96,14 +96,14 @@ atau jika menggunakan `psql`, dapat menggunakan menggunakan perintah berikut:
 PGPASSWORD=WW0xV00xZ3pRbWhqTTA0ellq psql -h 103.76.121.53 -p 54321 -U ropantau -d pantau2024
 ```
 
-atau
+atau gunakan `environment variables` berikut;
 
-```
-Host: 103.76.121.53
-Port: 54321
-Database: pantau2024
-User: ropantau
-Password: WW0xV00xZ3pRbWhqTTA0ellq
+```bash
+PGHOST=103.76.121.53
+PGPORT=54321
+PGDATABASE=pantau2024
+PGUSER=ropantau
+PGPASSWORD=WW0xV00xZ3pRbWhqTTA0ellq
 ```
 
 ## API

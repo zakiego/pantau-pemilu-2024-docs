@@ -1,5 +1,6 @@
 {
 	"index": "Pendahuluan",
-	"database-pendukung": "Database Pendukung",
-	"database-dpd": "Database DPD"
+	"data-pendukung": "Data Pendukung",
+	"data-presiden-wakil-presiden": "Data Presiden dan Wakil Presiden",
+	"data-dpd": "Data DPD"
 }

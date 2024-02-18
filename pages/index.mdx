@@ -88,17 +88,19 @@ mengakses database ini.
 
 Untuk akses melalui PostgreSQL Connection URI, dapat menggunakan:
 
-`postgres://ropantau:WW0xV00xZ3pRbWhqTTA0ellq@103.76.121.53:54321/pantau2024`
+``` copy
+postgres://ropantau:WW0xV00xZ3pRbWhqTTA0ellq@103.76.121.53:54321/pantau2024
+```
 
 atau jika menggunakan `psql`, dapat menggunakan menggunakan perintah berikut:
 
-```bash
+```bash copy
 PGPASSWORD=WW0xV00xZ3pRbWhqTTA0ellq psql -h 103.76.121.53 -p 54321 -U ropantau -d pantau2024
 ```
 
 atau gunakan `environment variables` berikut;
 
-```bash
+```bash copy
 PGHOST=103.76.121.53
 PGPORT=54321
 PGDATABASE=pantau2024
@@ -112,8 +114,10 @@ Selain itu, data ini juga bisa diakses melalui API. Namun baru terdapat satu
 endpoint yang bisa diakses dan baru berupa data TPS untuk Pemilihan Presiden dan
 Wakil Presiden.
 
-API dapat diakses di
-`https://pantau-api.razanfawwaz.dev/api/v1/ppwp?limit=10&offset=0`
+API dapat diakses melalui
+``` copy
+https://pantau-api.razanfawwaz.dev/api/v1/ppwp?limit=10&offset=0
+```
 
 Parameter yang bisa digunakan adalah:
 

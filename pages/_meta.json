@@ -1,6 +1,5 @@
 {
-	"index": {
-		"title": "Data Pemilu 2024",
-		"type": "page"
-	}
+	"index": "Pendahuluan",
+	"database-pendukung": "Database Pendukung",
+	"database-dpd": "Database DPD"
 }

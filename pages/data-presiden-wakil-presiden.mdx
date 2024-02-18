@@ -1,0 +1,73 @@
+# Data Pemilihan Presiden dan Wakil Presiden
+
+Data ini berisi hasil perhitungan suara Pemilihan Presiden dan Wakil Presiden di
+setiap TPS (Tempat Pemungutan Suara) di Indonesia.
+
+## `ppwp_tps`
+
+`ppwp` merupakan singkatan dari Pemilihan Presiden dan Wakil Presiden.
+
+**Nama tabel**: `ppwp_tps`
+
+**Sumber data**:
+
+`https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp/{kode_provinsi}/{kode_kabupaten}/{kode_kecamatan}/{kode_kelurahan}/{kode_tps}.json`
+
+Contoh:
+https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp/31/3174/317408/3174081004/3174081004007.json
+
+**Kolom**:
+
+- `kode`: Kode unik TPS, mengacu pada kolom `kode` pada tabel
+  [`wilayah`](/data-pendukung/wilayah)
+- `provinsi_kode`: Kode provinsi
+- `provinsi_nama`: Nama provinsi
+- `kabupaten_kota_kode`: Kode kabupaten/kota
+- `kabupaten_kota_nama`: Nama kabupaten/kota
+- `kecamatan_kode`: Kode kecamatan
+- `kecamatan_nama`: Nama kecamatan
+- `kelurahan_desa_kode`: Kode kelurahan/desa
+- `kelurahan_desa_nama`: Nama kelurahan/desa
+- `tps`: Nomor TPS
+
+- `suara_paslon_1`: Jumlah suara pasangan calon 01
+- `suara_paslon_2`: Jumlah suara pasangan calon 02
+- `suara_paslon_3`: Jumlah suara pasangan calon 03
+
+- `chasil_hal_1`: Foto formulir C1 hasil halaman 1
+- `chasil_hal_2`: Foto formulir C1 hasil halaman 2
+- `chasil_hal_3`: Foto formulir C1 hasil halaman 3
+
+- `suara_sah`: Jumlah suara sah
+- `suara_total`: Jumlah suara total
+- `pemilih_dpt_j`: Jumlah pemilih DPT jumlah
+- `pemilih_dpt_l`: Jumlah pemilih DPT jenis laki-laki
+- `pemilih_dpt_p`: Jumlah pemilih DPT jenis perempuan
+- `pengguna_dpt_j`: Jumlah pengguna DPT jumlah
+- `pengguna_dpt_l`: Jumlah pengguna DPT jenis laki-laki
+- `pengguna_dpt_p`: Jumlah pengguna DPT jenis perempuan
+- `pengguna_dptb_j`: Jumlah pengguna DPTb jumlah
+- `pengguna_dptb_l`: Jumlah pengguna DPTb jenis laki-laki
+- `pengguna_dptb_p`: Jumlah pengguna DPTb jenis perempuan
+- `suara_tidak_sah`: Jumlah suara tidak sah
+- `pengguna_total_j`: Jumlah pengguna total jumlah
+- `pengguna_total_l`: Jumlah pengguna total jenis laki-laki
+- `pengguna_total_p`: Jumlah pengguna total jenis perempuan
+- `pengguna_non_dpt_j`: Jumlah pengguna non-DPT jumlah
+- `pengguna_non_dpt_l`: Jumlah pengguna non-DPT jenis laki-laki
+- `pengguna_non_dpt_p`: Jumlah pengguna non-DPT jenis perempuan
+- `psu`: Belum diketahui, [kabarin](https://twitter.com/zakiego) kalau ada yang
+  tahu!
+- `ts`: Waktu terakhir data diupdate oleh KPU
+- `status_suara`: Status suara
+- `status_adm`: Status administrasi
+- `url_page`: Kolom tambahan untuk mengetahui URL halaman web KPU yang
+  menampilkan data
+- `url_api`: Kolom tambahan untuk mengetahui URL API yang digunakan untuk
+  mengambil data
+- `updated_at`: Kolom tambahan untuk mengetahui kapan data terakhir kali
+  discrape dari web KPU
+- `created_at`: Kolom tambahan untuk mengetahui kapan data pertama kali
+  dimasukkan
+- `fetch_count`: Kolom tambahan untuk menghitung berapa kali data discrape dari
+  web KPU

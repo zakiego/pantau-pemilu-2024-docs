@@ -1,23 +1,15 @@
-# Nextra Docs Template 
+# Dokumentasi Pantau Pemilu 2024
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+Dokumentasi untuk web [data-pemilu.vercel.app](https://data-pemilu.vercel.app)
 
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
+Di balik layar dikerjakan oleh:
 
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
+- [@zakiego](https://twitter.com/zakiego)
+- [@razanfawwaz](https://twitter.com/razanfawwaz)
+- [@mgilangjanuar](https://twitter.com/mgilangjanuar)
+- [@50HzPower](https://twitter.com/50HzPower)
 
-## Quick Start
+Didukung oleh:
 
-Click the button to clone this repository and deploy it on Vercel:
-
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
-
-## Local Development
-
-First, run `pnpm i` to install the dependencies.
-
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
-
-## License
-
-This project is licensed under the MIT License.
+- [Kawal Pemilu](https://twitter.com/KawalPemilu_org)
+- [Nevacloud](https://nevacloud.com/?utm_medium=pantau-pemilu&utm_content=website)

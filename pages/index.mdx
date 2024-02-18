@@ -1,30 +1,135 @@
-# Data Pemilu 2024
- 
+# Pendahuluan
 
-Project ini adalah project untuk mengumpulkan data pemilu 2024. Data yang diambil adalah data dari website [https://pemilu2024.kpu.go.id](https://pemilu2024.kpu.go.id/)
+Project ini adalah project untuk mengumpulkan data pemilu 2024. Data yang
+diambil adalah data dari website
+[https://pemilu2024.kpu.go.id](https://pemilu2024.kpu.go.id/)
 
 Di balik layar dikerjakan oleh:
+
 - [@zakiego](https://twitter.com/zakiego)
 - [@razanfawwaz](https://twitter.com/razanfawwaz)
 - [@mgilangjanuar](https://twitter.com/mgilangjanuar)
+- [@50HzPower](https://twitter.com/50HzPower)
 
-> Dokumentasi lengkap ditulis nanti ya, kurang tidur 😣
->
-> Kalu ada yang mau didiskusikan, bisa langsung DM ya 
+Didukung oleh:
 
-## Catatan
+- [Kawal Pemilu](https://twitter.com/KawalPemilu_org)
+- [Nevacloud](https://nevacloud.com/?utm_medium=pantau-pemilu&utm_content=website)
 
-- Data ini boleh digunakan untuk kepentingan apapun, selama tidak melanggar hukum.
-- Data dari website KPU masih dalam proses, belum lengkap. Jadi, data yang diambil juga belum lengkap.
-- Data yang ada di database ini akan diupdate untuk mengikutin perkembangan data di website KPU.
+## Disclaimer
+
+- Data ini boleh digunakan untuk kepentingan apapun, selama tidak melanggar
+  hukum.
+- Data dari website KPU masih dalam proses, belum lengkap. Jadi, data yang
+  diambil juga belum lengkap.
+- Data yang ada di database ini akan diupdate untuk mengikutin perkembangan data
+  di website KPU.
+
+## Data
+
+Berikut adalah tabel yang tersedia di database ini:
+
+### Pendukung
+
+- [x] [`wilayah`](/data-pendukung#wilayah): Data wilayah Indonesia
+- [x] [`partai`](/data-pendukung#partai): Data partai politik
+
+### Presiden dan Wakil Presiden:
+
+- [x] [`ppwp_tps`](/data-presiden-wakil-presiden): Pemilihan Presiden dan Wakil
+      Presiden per TPS
+
+### DPD:
+
+- [x] [`pdpd_calon_list`](/data-dpd#pdpd_calon_list): Daftar Calon DPD
+- [x] [`pdpd_tps_list`](/data-dpd#pdpd_tps_list): Daftar TPS untuk DPD
+- [x] [`pdpd_tps_administrasi`](/data-dpd#pdpd_tps_administrasi): Administrasi
+      Pemilihan DPD per TPS, berisi foto formulir C1, jumlah suara sah, suara
+      tidak sah, jumlah pemilih, dll
+- [x] [`pdpd_tps_chart`](/data-dpd#pdpd_tps_chart): Perolehan suara DPD per TPS
+
+### DPR:
+
+- [ ] Pemilihan Legislatif DPR per TPS
+- [ ] Pemilihan Legislatif DPR per Daerah Pemilihan (Dapil)
+- [ ] Pemilihan Legislatif DPD per TPS
+
+### DPRD Provinsi:
+
+- [ ] Pemilihan Legislatif DPRD Provinsi per TPS
+- [ ] Pemilihan Legislatif DPD per Daerah Pemilihan (Dapil)
+
+### DPRD Kabupaten/Kota:
+
+- [ ] Pemilihan Legislatif DPRD Kabupaten/Kota per TPS
+- [ ] Pemilihan Legislatif DPRD Kabupaten/Kota per Daerah Pemilihan (Dapil)
 
 ## Database
 
-Database yang diterapkan adalah PostgreSQL. Jika ingin mengaksesnya, Anda dapat menggunakan koneksi yang disediakan berikut:
+> Catatan
+>
+> - Data akan terus kami update seiring dengan perkembangan data di website KPU,
+>   dan dimasukkan ke dalam database ini. Sedangkan file yang diunggah ke Google
+>   Drive belum bisa diupdate secara otomatis, jadi untuk mendapatkan data yang
+>   paling terkini, disarankan untuk menggunakan database langsung.
+>
+> - Acuan ada pada kolom `updated_at` di setiap tabel, yang menunjukkan kapan
+>   data terakhir ditarik dari website KPU. Sedangkan kolom `ts` adalah
+>   timestamp dari website KPU itu sendiri.
+>
+> - Selama proses development, database ini bisa berubah struktur, jadi pastikan
+>   untuk selalu memeriksa dokumentasi ini.
 
-`postgres://pantau:ZubQ7IHFn1sTCP8C8rgw3T24QIiJktb8@vps.zakiego.com:54325/pemilu_2024`
+Database yang digunakan adalah PostgreSQL. Berikut adalah kredensial untuk
+mengakses database ini.
+
+~`postgres://pantau:ZubQ7IHFn1sTCP8C8rgw3T24QIiJktb8@vps.zakiego.com:54325/pemilu_2024`~
+(tidak lagi digunakan)
+
+Untuk akses melalui url, gunakan:
+
+`postgres://ropantau:WW0xV00xZ3pRbWhqTTA0ellq@103.76.121.53:54321/pantau2024`
+
+atau jika menggunakan psql, gunakan:
+
+```
+psql -h 103.76.121.53 -p 54321 -U ropantau -d pantau2024
+
+# lalu masukkan password `WW0xV00xZ3pRbWhqTTA0ellq`
+```
+
+atau
+
+```
+Host: 103.76.121.53
+Port: 54321
+Database: pantau2024
+User: ropantau
+Password: WW0xV00xZ3pRbWhqTTA0ellq
+```
+
+## API
+
+Selain itu, data ini juga bisa diakses melalui API. Namun baru terdapat satu
+endpoint yang bisa diakses dan baru berupa data TPS untuk Pemilihan Presiden dan
+Wakil Presiden.
+
+API dapat diakses di
+`https://pantau-api.razanfawwaz.dev/api/v1/ppwp?limit=10&offset=0`
+
+Parameter yang bisa digunakan adalah:
+
+- `limit` - Jumlah data yang ingin diambil
+- `offset`- Data yang ingin diambil dimulai dari data keberapa
+
+Pastikan untuk menggunakan parameter `limit` dikarenakan jika tidak digunakan,
+maka data tidak akan muncul.
 
 ## File
 
-Ini adalah file dari database yang telah diubah ke dalam format Excel dan dapat diunduh di tautannya di [sini](https://drive.google.com/drive/folders/15nquDatlYQIM8rQMTyVwhG-PoUreE7Qr?usp=drive_link).
-Pembaruan file tidak akan terjadi secara rutin, oleh karena itu untuk mendapatkan data yang paling terkini, disarankan untuk menggunakan basis data langsung
+Ini adalah file dari database yang telah diubah ke dalam format Excel dan dapat
+diunduh di tautannya di
+[sini](https://drive.google.com/drive/folders/15nquDatlYQIM8rQMTyVwhG-PoUreE7Qr?usp=drive_link).
+Pembaruan file tidak akan terjadi secara rutin, oleh karena itu untuk
+mendapatkan data yang paling terkini, disarankan untuk menggunakan basis data
+langsung

@@ -1,0 +1,84 @@
+# Data Pendukung
+
+## `wilayah`
+
+Data ini merupakan data yang berisi data wilayah di Indonesia, dimulai dari
+tingkat provinsi, kabupaten, kecamatan, dan kelurahan,desa, dan TPS.
+
+Nama tabel: `wilayah`
+
+**Sumber data**:
+
+Daftar Provinsi: `https://sirekap-obj-data.kpu.go.id/wilayah/pemilu/ppwp/0.json`
+
+Daftar Kabupaten/Kota:
+`https://sirekap-obj-data.kpu.go.id/wilayah/pemilu/ppwp/{id_provinsi}.json`
+
+Daftar Kecamatan:
+`https://sirekap-obj-data.kpu.go.id/wilayah/pemilu/ppwp/{id_provinsi}/{id_kabupaten_kota}.json`
+
+Daftar Kelurahan/Desa:
+`https://sirekap-obj-data.kpu.go.id/wilayah/pemilu/ppwp/{id_provinsi}/{id_kabupaten_kota}/{id_kecamatan}.json`
+
+Daftar TPS:
+`https://sirekap-obj-data.kpu.go.id/wilayah/pemilu/ppwp/{id_provinsi}/{id_kabupaten_kota}/{id_kecamatan}/{id_kelurahan_desa}.json`
+
+Sebenarnya, kode TPS sepanjang 13 digit, merupakan gabungan dari kode provinsi,
+kabupaten/kota, kecamatan, kelurahan/desa, dan nomor urut TPS.
+
+Contoh: `3204061001013`
+
+- `32`: Kode Provinsi: JAWA BARAT
+- `04`: Kode Kabupaten/Kota: BANDUNG
+- `06`: Kode Kecamatan: CIMENYAN
+- `1001`: Kode Kelurahan/Desa: PADASUKA
+- `013`: Nomor urut TPS: 13
+
+**Kolom**:
+
+- `id`: Id wilayah
+- `kode`: Kode wilayah, ini yang digunakan sebagai acuan dalam query
+- `nama`: Nama wilayah
+- `tingkat`: Tingkat wilayah. `1` untuk provinsi, `2` untuk kabupaten/kota, `3`
+  untuk kecamatan, `4` untuk kelurahan/desa, dan `5` untuk TPS
+- `_is_fetched_presiden`: Kolom tambahan untuk menandai status data wilayah
+  sudah dilakukan scraping untuk pemilihan presiden
+- `_is_fetched_dpr`: Kolom tambahan untuk menandai status data wilayah sudah
+  dilakukan scraping untuk pemilihan DPR
+- `_is_fetched_dpd`: Kolom tambahan untuk menandai status data wilayah sudah
+  dilakukan scraping untuk pemilihan DPD
+- `_is_fetched_dprd_provinsi`: Kolom tambahan untuk menandai status data wilayah
+  sudah dilakukan scraping untuk pemilihan DPRD Provinsi
+- `_is_fetched_dprd_kabupaten_kota`: Kolom tambahan untuk menandai status data
+  wilayah sudah dilakukan scraping untuk pemilihan DPRD Kabupaten/Kota
+- `updated_at`: Kolom tambahan untuk menandai tanggal terakhir data wilayah
+  discrape
+- `created_at`: Kolom tambahan untuk menandai tanggal pertama data wilayah
+  discrape
+
+## `partai`
+
+Data ini merupakan data yang berisi data partai politik yang ikut dalam Pemilu
+2024, digunakan untuk relasi pada tabel calon anggota legislatif tingkat
+DPR,DPRD Provinsi, dan DPRD Kabupaten/Kota.
+
+Nama tabel: `partai`
+
+**Sumber data**:
+
+`https://sirekap-obj-data.kpu.go.id/pemilu/partai.json`
+
+**Kolom**:
+
+- `id_partai`: Id partai
+- `id_pilihan`: Id partai yang digunakan dalam pemilihan
+- `is_aceh`: Menandai apakah partai ini hanya berlaku di Aceh
+- `nama`: Nama partai
+- `nama_lengkap`: Nama lengkap partai
+- `nomor_urut`: Nomor urut partai
+- `warna`: Warna partai
+- `ts`: Waktu terakhir data partai diupdate oleh KPU
+- `updated_at`: Kolom tambahan untuk menandai tanggal terakhir data partai
+  discrape
+- `created_at`: Kolom tambahan untuk menandai tanggal pertama data partai
+  discrape

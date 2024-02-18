@@ -90,12 +90,10 @@ Untuk akses melalui url, gunakan:
 
 `postgres://ropantau:WW0xV00xZ3pRbWhqTTA0ellq@103.76.121.53:54321/pantau2024`
 
-atau jika menggunakan psql, gunakan:
+atau jika menggunakan `psql`, dapat menggunakan menggunakan perintah berikut:
 
-```
-psql -h 103.76.121.53 -p 54321 -U ropantau -d pantau2024
-
-# lalu masukkan password `WW0xV00xZ3pRbWhqTTA0ellq`
+```bash
+PGPASSWORD=WW0xV00xZ3pRbWhqTTA0ellq psql -h 103.76.121.53 -p 54321 -U ropantau -d pantau2024
 ```
 
 atau

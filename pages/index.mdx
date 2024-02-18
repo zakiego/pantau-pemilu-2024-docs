@@ -1,7 +1,7 @@
 # Pendahuluan
 
-Project ini berjalan untuk mengumpulkan data Pemilu 2024. Data yang
-diambil adalah berasal dari _website_
+Project ini berjalan untuk mengumpulkan data Pemilu 2024. Data yang diambil
+adalah berasal dari _website_
 [https://pemilu2024.kpu.go.id](https://pemilu2024.kpu.go.id/)
 
 Di balik layar dikerjakan oleh:
@@ -20,10 +20,10 @@ Didukung oleh:
 
 - Data ini boleh digunakan untuk kepentingan apapun, selama tidak melanggar
   hukum.
-- Data dari TPS seluruh Indonesia belum masuk ke _website_ KPU 100% sehingga data yang
-  diambil juga belum lengkap.
-- Data pada database ini akan diperbaharui mengikuti perkembangan data
-  pada _website_ KPU.
+- Data dari TPS seluruh Indonesia belum masuk ke _website_ KPU 100% sehingga
+  data yang diambil juga belum lengkap.
+- Data pada database ini akan diperbaharui mengikuti perkembangan data pada
+  _website_ KPU.
 
 ## Data
 
@@ -68,17 +68,17 @@ Berikut adalah tabel yang tersedia pada database ini:
 
 > Catatan
 >
-> - Data dalam database akan terus kami _update_ seiring dengan perkembangan data _website_ KPU.
->   Sedangkan file yang diunggah ke Google
->   Drive belum bisa di-_update_ secara otomatis. Jadi, untuk mendapatkan data
->   terkini, disarankan menggunakan database secara langsung.
+> - Data dalam database akan terus kami _update_ seiring dengan perkembangan
+>   data _website_ KPU. Sedangkan file yang diunggah ke Google Drive belum bisa
+>   di-_update_ secara otomatis. Jadi, untuk mendapatkan data terkini,
+>   disarankan menggunakan database secara langsung.
 >
 > - Acuan ada pada kolom `updated_at` di setiap tabel, yang menunjukkan kapan
 >   data terakhir ditarik dari website KPU. Sedangkan kolom `ts` adalah
 >   timestamp dari website KPU itu sendiri.
 >
-> - Selama proses _development_, _schema_ pada database ini bisa berubah sewaktu-waktu. Jadi,
->   pastikan selalu periksa dokumentasi ini.
+> - Selama proses _development_, _schema_ pada database ini bisa berubah
+>   sewaktu-waktu. Jadi, pastikan selalu periksa dokumentasi ini.
 
 Database yang digunakan adalah PostgreSQL. Berikut adalah kredensial untuk
 mengakses database ini.
@@ -88,7 +88,7 @@ mengakses database ini.
 
 Untuk akses melalui PostgreSQL Connection URI, dapat menggunakan:
 
-``` copy
+```bash copy
 postgres://ropantau:WW0xV00xZ3pRbWhqTTA0ellq@103.76.121.53:54321/pantau2024
 ```
 
@@ -110,12 +110,13 @@ PGPASSWORD=WW0xV00xZ3pRbWhqTTA0ellq
 
 ## API
 
-Selain itu, data pada project ini dapat bisa diakses melalui API. Namun, baru terdapat satu
-_endpoint_ yang bisa diakses serta hanya berupa data TPS untuk Pemilihan Presiden dan
-Wakil Presiden.
+Selain itu, data pada project ini dapat bisa diakses melalui API. Namun, baru
+terdapat satu _endpoint_ yang bisa diakses serta hanya berupa data TPS untuk
+Pemilihan Presiden dan Wakil Presiden.
 
 API dapat diakses melalui
-``` copy
+
+```copy
 https://pantau-api.razanfawwaz.dev/api/v1/ppwp?limit=10&offset=0
 ```
 
@@ -124,8 +125,8 @@ Parameter yang bisa digunakan adalah:
 - `limit` - Jumlah data yang ingin diambil
 - `offset`- Data yang ingin diambil dimulai dari data keberapa
 
-Pastikan untuk menggunakan parameter `limit` karena jika tidak digunakan,
-maka data tidak akan muncul.
+Pastikan untuk menggunakan parameter `limit` karena jika tidak digunakan, maka
+data tidak akan muncul.
 
 ## File
 
@@ -133,5 +134,5 @@ Ini adalah file dari database yang telah diubah ke dalam format Excel dan dapat
 diunduh di tautannya di
 [sini](https://drive.google.com/drive/folders/15nquDatlYQIM8rQMTyVwhG-PoUreE7Qr?usp=drive_link).
 Pembaharuan file tidak akan terjadi secara rutin, oleh karena itu untuk
-mendapatkan data yang paling terkini, disarankan untuk menggunakan database secara
-langsung
+mendapatkan data yang paling terkini, disarankan untuk menggunakan database
+secara langsung

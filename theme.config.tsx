@@ -17,6 +17,7 @@ const config: DocsThemeConfig = {
 		return {
 			titleTemplate: "%s | Data Pemilu 2024",
 			defaultTitle: "Data Pemilu 2024",
+			description: "Data Perolehan Suara Pemilu 2024",
 		};
 	},
 };

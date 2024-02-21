@@ -7,16 +7,16 @@ export default async function handler(
 ) {
 	const data = await sql.begin(async (sql) => {
 		const presiden = await sql`
-			SELECT DATE(updated_at) AS date, COUNT('id') AS count
-			FROM ppwp_tps
-			GROUP BY DATE(updated_at)
-			ORDER BY DATE(updated_at) DESC`;
+		SELECT DATE(updated_at) AS date, COUNT('id') AS count
+		FROM ppwp_tps
+		GROUP BY DATE(updated_at)
+		ORDER BY DATE(updated_at) DESC`;
 
 		const dpd = await sql`
-	    SELECT DATE(updated_at) AS date, COUNT('id') AS count
-      FROM pdpd_tps_list
-      GROUP BY DATE(updated_at)
-      ORDER BY DATE(updated_at) DESC`;
+		SELECT DATE(updated_at) AS date, COUNT('id') AS count
+		FROM pdpd_tps_list
+		GROUP BY DATE(updated_at)
+		ORDER BY DATE(updated_at) DESC`;
 
 		return { presiden, dpd };
 	});

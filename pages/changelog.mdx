@@ -1,0 +1,32 @@
+# Riwayat Pembaruan
+
+## 22 Februari 2024
+
+- Penambahan tabel Presiden:
+  - `ppwp_nasional`: Hasil perhitungan suara Pilpres tingkat nasional
+  - `ppwp_provinsi`: Hasil perhitungan suara Pilpres tingkat provinsi
+  - `ppwp_kabupaten_kota`: Hasil perhitungan suara Pilpres tingkat kabupaten
+  - `ppwp_kecamatan`: Hasil perhitungan suara Pilpres tingkat kecamatan
+  - `ppwp_kelurahan_desa`: Hasil perhitungan suara Pilpres tingkat kelurahan
+- Fix grant select pada tabel `ppwp_*` dan `pdpd_*` untuk user `ropantau`
+
+## 21 Februari 2024
+
+- Update data otomatis menggunakan GitHub Actions
+  [https://github.com/zakiego/pantau-pemilu-2024/tree/main/.github/workflows](https://github.com/zakiego/pantau-pemilu-2024/tree/main/.github/workflows)
+
+## 18 Februari 2024
+
+- Pindah ke server baru, dari
+  ~`postgres://pantau:ZubQ7IHFn1sTCP8C8rgw3T24QIiJktb8@vps.zakiego.com:54325/pemilu_2024`~
+  ke
+  `postgres://ropantau:WW0xV00xZ3pRbWhqTTA0ellq@103.76.121.53:54321/pantau2024`
+- Dokumentasi penjelasan dari tiap tabel
+- Update data suara pilpres terbaru (2024-02-18)
+- Penambahan tabel DPD:
+  - `pdpd_calon_list`: Daftar calon DPD
+  - `pdpd_tps_administrasi`: Data administrasi TPS
+  - `pdpd_tps_chart`: Data chart TPS
+  - `pdpd_tps_list`: Daftar TPS DPD
+  - `partai`: Daftar partai peserta pemilu
+- Penambahan API untuk Pilpres (`ppwp`)

@@ -6,4 +6,10 @@ secret:
     name: PostgreSQL Credentials - /Users/m.zakiyuddinmunziri/Code/JS/NextJS/2024/sirekap/pages/index.mdx
   - match: 23046ce2ff764752813ef787e0c89aebda3ba728fab942df20b984d6a8cbd651
     name: PostgreSQL Credentials - /Users/m.zakiyuddinmunziri/Code/JS/NextJS/2024/sirekap/pages/index.mdx
+  - match: ea4a2212c136d1a9b92a5b97d403c70d84ca105d19ed55170511a7916ea766fa
+    name: PostgreSQL Credentials - /Users/m.zakiyuddinmunziri/Code/JS/NextJS/2024/sirekap/pages/changelog.mdx
+  - match: 4a23164793c38b8ee65a3e1b1705bac3ad858d469a1ca70636c20c351392d233
+    name: Generic Database Assignment - /Users/m.zakiyuddinmunziri/Code/JS/NextJS/2024/sirekap/.env
+  - match: 5170e58da3ec4e9d2f692a9f834d18707d5a32789d1cd1b44cfcff8b747882ea
+    name: PostgreSQL Credentials - /Users/m.zakiyuddinmunziri/Code/JS/NextJS/2024/sirekap/pages/index.mdx
 version: 2

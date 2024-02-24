@@ -123,6 +123,14 @@ PGUSER=ropantau
 PGPASSWORD=WW0xV00xZ3pRbWhqTTA0ellq
 ```
 
+## File
+
+Data dalam bentuk file `.csv` juga tersedia. File ini di-_generate_ secara
+otomatis dari database
+[setiap jam sekali](https://github.com/zakiego/pantau-pemilu-2024/actions/workflows/release.yml).
+File ini dapat diunduh melalui di
+[kawalpemilu.zakiego.com:1414](http://kawalpemilu.zakiego.com:1414/)
+
 ## API
 
 Selain itu, data pada project ini dapat bisa diakses melalui API. Namun, baru
@@ -131,7 +139,7 @@ Pemilihan Presiden dan Wakil Presiden.
 
 API dapat diakses melalui
 
-```copy
+```bash copy
 https://pantau-api.razanfawwaz.dev/api/v1/ppwp?limit=10&offset=0
 ```
 
@@ -142,12 +150,3 @@ Parameter yang bisa digunakan adalah:
 
 Pastikan untuk menggunakan parameter `limit` karena jika tidak digunakan, maka
 data tidak akan muncul.
-
-## File
-
-Ini adalah file dari database yang telah diubah ke dalam format Excel dan dapat
-diunduh di tautannya di
-[sini](https://drive.google.com/drive/folders/15nquDatlYQIM8rQMTyVwhG-PoUreE7Qr?usp=drive_link).
-Pembaharuan file tidak akan terjadi secara rutin, oleh karena itu untuk
-mendapatkan data yang paling terkini, disarankan untuk menggunakan database
-secara langsung

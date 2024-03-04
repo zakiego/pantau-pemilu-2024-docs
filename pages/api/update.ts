@@ -18,7 +18,13 @@ export default async function handler(
 		GROUP BY DATE(updated_at)
 		ORDER BY DATE(updated_at) DESC`;
 
-		return { presiden, dpd };
+		const dpr = await sql`
+		SELECT DATE(updated_at) AS date, COUNT('id') AS count
+		FROM pdpr_tps_list
+		GROUP BY DATE(updated_at)
+		ORDER BY DATE(updated_at) DESC`;
+
+		return { presiden, dpd, dpr };
 	});
 
 	res.status(200).json({ data });

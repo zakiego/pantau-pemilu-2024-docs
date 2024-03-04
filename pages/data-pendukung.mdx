@@ -1,4 +1,6 @@
-# Data Pendukung
+import { DICTIONARY } from "../lib/dictionary";
+
+# Data Wilayah dan Partai
 
 ## `wilayah`
 
@@ -51,10 +53,8 @@ Contoh: `3204061001013`
   sudah dilakukan scraping untuk pemilihan DPRD Provinsi
 - `_is_fetched_dprd_kabupaten_kota`: Kolom tambahan untuk menandai status data
   wilayah sudah dilakukan scraping untuk pemilihan DPRD Kabupaten/Kota
-- `updated_at`: Kolom tambahan untuk menandai tanggal terakhir data wilayah
-  discrape
-- `created_at`: Kolom tambahan untuk menandai tanggal pertama data wilayah
-  discrape
+- `updated_at`: {DICTIONARY['updated_at']}
+- `created_at`: {DICTIONARY['created_at']}
 
 ## `partai`
 
@@ -77,8 +77,6 @@ Nama tabel: `partai`
 - `nama_lengkap`: Nama lengkap partai
 - `nomor_urut`: Nomor urut partai
 - `warna`: Warna partai
-- `ts`: Waktu terakhir data partai diupdate oleh KPU
-- `updated_at`: Kolom tambahan untuk menandai tanggal terakhir data partai
-  discrape
-- `created_at`: Kolom tambahan untuk menandai tanggal pertama data partai
-  discrape
+- `ts`: {DICTIONARY['ts']}
+- `updated_at`: {DICTIONARY['updated_at']}
+- `created_at`: {DICTIONARY['created_at']}

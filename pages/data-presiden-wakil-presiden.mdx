@@ -1,11 +1,193 @@
+import { DICTIONARY } from "../lib/dictionary";
+
 # Data Pemilihan Presiden dan Wakil Presiden
 
 Data ini berisi hasil perhitungan suara Pemilihan Presiden dan Wakil Presiden di
 setiap TPS (Tempat Pemungutan Suara) di Indonesia.
 
-## `ppwp_tps`
-
 `ppwp` merupakan singkatan dari Pemilihan Presiden dan Wakil Presiden.
+
+## `ppwp_nasional`
+
+**Nama tabel**: `ppwp_nasional`
+
+**Sumber data**:
+
+[`https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp.json`](https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp.json)
+
+**Kolom**:
+
+- `kode`: 0
+
+- `suara_paslon_1`: {DICTIONARY['suara_paslon_1']}
+- `suara_paslon_2`: {DICTIONARY['suara_paslon_2']}
+- `suara_paslon_3`: {DICTIONARY['suara_paslon_3']}
+
+- `persen_suara_masuk`: {DICTIONARY['persen_suara_masuk']}
+
+- `psu`: {DICTIONARY['psu']}
+- `ts`: {DICTIONARY['ts']}
+
+- `url_page`: {DICTIONARY['url_page']}
+- `url_api`: {DICTIONARY['url_api']}
+
+- `updated_at`: {DICTIONARY['updated_at']}
+- `created_at`: {DICTIONARY['created_at']}
+- `fetch_count`: {DICTIONARY['fetch_count']}
+
+## `ppwp_provinsi`
+
+**Nama tabel**: `ppwp_provinsi`
+
+**Sumber data**:
+
+[`https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp.json`](https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp.json)
+
+**Kolom**:
+
+- `kode`: {DICTIONARY['provinsi_kode']}
+
+- `provinsi_kode`: {DICTIONARY['provinsi_kode']}
+- `provinsi_nama`: {DICTIONARY['provinsi_nama']}
+
+- `suara_paslon_1`: {DICTIONARY['suara_paslon_1']}
+- `suara_paslon_2`: {DICTIONARY['suara_paslon_2']}
+- `suara_paslon_3`: {DICTIONARY['suara_paslon_3']}
+
+- `persen`: {DICTIONARY['ppwp_persen']}
+- `status_progress`: {DICTIONARY['ppwp_status_progress']}
+
+- `psu`: {DICTIONARY['psu']}
+- `ts`: {DICTIONARY['ts']}
+
+- `url_page`: {DICTIONARY['url_page']}
+- `url_api`: {DICTIONARY['url_api']}
+
+- `updated_at`: {DICTIONARY['updated_at']}
+- `created_at`: {DICTIONARY['created_at']}
+- `fetch_count`: {DICTIONARY['fetch_count']}
+
+## `ppwp_kabupaten_kota`
+
+**Nama tabel**: `ppwp_kabupaten_kota`
+
+**Sumber data**:
+
+`https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp/{provinsi_kode}.json`
+
+Contoh: https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp/31.json
+
+**Kolom**:
+
+- `kode`: {DICTIONARY['kabupaten_kota_kode']}
+
+- `provinsi_kode`: {DICTIONARY['provinsi_kode']}
+- `provinsi_nama`: {DICTIONARY['provinsi_nama']}
+
+- `kabupaten_kota_kode`: {DICTIONARY['kabupaten_kota_kode']}
+- `kabupaten_kota_nama`: {DICTIONARY['kabupaten_kota_nama']}
+
+- `suara_paslon_1`: {DICTIONARY['suara_paslon_1']}
+- `suara_paslon_2`: {DICTIONARY['suara_paslon_2']}
+- `suara_paslon_3`: {DICTIONARY['suara_paslon_3']}
+
+- `persen`: {DICTIONARY['ppwp_persen']}
+- `status_progress`: {DICTIONARY['ppwp_status_progress']}
+
+- `psu`: {DICTIONARY['psu']}
+- `ts`: {DICTIONARY['ts']}
+
+- `url_page`: {DICTIONARY['url_page']}
+- `url_api`: {DICTIONARY['url_api']}
+
+- `updated_at`: {DICTIONARY['updated_at']}
+- `created_at`: {DICTIONARY['created_at']}
+- `fetch_count`: {DICTIONARY['fetch_count']}
+
+## `ppwp_kecamatan`
+
+**Nama tabel**: `ppwp_kecamatan`
+
+**Sumber data**:
+
+`https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp/{kode_provinsi}/{kode_kabupaten}.json`
+
+Contoh: https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp/31/3174.json
+
+**Kolom**:
+
+- `kode`: {DICTIONARY['kecamatan_kode']}
+
+- `provinsi_kode`: {DICTIONARY['provinsi_kode']}
+- `provinsi_nama`: {DICTIONARY['provinsi_nama']}
+
+- `kabupaten_kota_kode`: {DICTIONARY['kabupaten_kota_kode']}
+- `kabupaten_kota_nama`: {DICTIONARY['kabupaten_kota_nama']}
+
+- `kecamatan_kode`: {DICTIONARY['kecamatan_kode']}
+- `kecamatan_nama`: {DICTIONARY['kecamatan_nama']}
+
+- `suara_paslon_1`: {DICTIONARY['suara_paslon_1']}
+- `suara_paslon_2`: {DICTIONARY['suara_paslon_2']}
+- `suara_paslon_3`: {DICTIONARY['suara_paslon_3']}
+
+- `persen`: {DICTIONARY['ppwp_persen']}
+- `status_progress`: {DICTIONARY['ppwp_status_progress']}
+
+- `psu`: {DICTIONARY['psu']}
+- `ts`: {DICTIONARY['ts']}
+
+- `url_page`: {DICTIONARY['url_page']}
+- `url_api`: {DICTIONARY['url_api']}
+
+- `updated_at`: {DICTIONARY['updated_at']}
+- `created_at`: {DICTIONARY['created_at']}
+- `fetch_count`: {DICTIONARY['fetch_count']}
+
+## `ppwp_kelurahan_desa`
+
+**Nama tabel**: `ppwp_kelurahan_desa`
+
+**Sumber data**:
+
+`https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp/{kode_provinsi}/{kode_kabupaten}/{kode_kecamatan}.json`
+
+Contoh: https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp/31/3174/317408.json
+
+**Kolom**:
+
+- `kode`: {DICTIONARY['kelurahan_desa_kode']}
+
+- `provinsi_kode`: {DICTIONARY['provinsi_kode']}
+- `provinsi_nama`: {DICTIONARY['provinsi_nama']}
+
+- `kabupaten_kota_kode`: {DICTIONARY['kabupaten_kota_kode']}
+- `kabupaten_kota_nama`: {DICTIONARY['kabupaten_kota_nama']}
+
+- `kecamatan_kode`: {DICTIONARY['kecamatan_kode']}
+- `kecamatan_nama`: {DICTIONARY['kecamatan_nama']}
+
+- `kelurahan_desa_kode`: {DICTIONARY['kelurahan_desa_kode']}
+- `kelurahan_desa_nama`: {DICTIONARY['kelurahan_desa_nama']}
+
+- `suara_paslon_1`: {DICTIONARY['suara_paslon_1']}
+- `suara_paslon_2`: {DICTIONARY['suara_paslon_2']}
+- `suara_paslon_3`: {DICTIONARY['suara_paslon_3']}
+
+- `persen`: {DICTIONARY['ppwp_persen']}
+- `status_progress`: {DICTIONARY['ppwp_status_progress']}
+
+- `psu`: {DICTIONARY['psu']}
+- `ts`: {DICTIONARY['ts']}
+
+- `url_page`: {DICTIONARY['url_page']}
+- `url_api`: {DICTIONARY['url_api']}
+
+- `updated_at`: {DICTIONARY['updated_at']}
+- `created_at`: {DICTIONARY['created_at']}
+- `fetch_count`: {DICTIONARY['fetch_count']}
+
+## `ppwp_tps`
 
 **Nama tabel**: `ppwp_tps`
 
@@ -18,56 +200,52 @@ https://sirekap-obj-data.kpu.go.id/pemilu/hhcw/ppwp/31/3174/317408/3174081004/31
 
 **Kolom**:
 
-- `kode`: Kode unik TPS, mengacu pada kolom `kode` pada tabel
-  [`wilayah`](/data-pendukung#wilayah)
-- `provinsi_kode`: Kode provinsi
-- `provinsi_nama`: Nama provinsi
-- `kabupaten_kota_kode`: Kode kabupaten/kota
-- `kabupaten_kota_nama`: Nama kabupaten/kota
-- `kecamatan_kode`: Kode kecamatan
-- `kecamatan_nama`: Nama kecamatan
-- `kelurahan_desa_kode`: Kode kelurahan/desa
-- `kelurahan_desa_nama`: Nama kelurahan/desa
-- `tps`: Nomor TPS
+- `kode`: {DICTIONARY['tps']}
+- `provinsi_kode`: {DICTIONARY['provinsi_kode']}
+- `provinsi_nama`: {DICTIONARY['provinsi_nama']}
+- `kabupaten_kota_kode`: {DICTIONARY['kabupaten_kota_kode']}
+- `kabupaten_kota_nama`: {DICTIONARY['kabupaten_kota_nama']}
+- `kecamatan_kode`: {DICTIONARY['kecamatan_kode']}
+- `kecamatan_nama`: {DICTIONARY['kecamatan_nama']}
+- `kelurahan_desa_kode`: {DICTIONARY['kelurahan_desa_kode']}
+- `kelurahan_desa_nama`: {DICTIONARY['kelurahan_desa_nama']}
+- `tps`: {DICTIONARY['tps']}
 
-- `suara_paslon_1`: Jumlah suara pasangan calon 01
-- `suara_paslon_2`: Jumlah suara pasangan calon 02
-- `suara_paslon_3`: Jumlah suara pasangan calon 03
+- `suara_paslon_1`: {DICTIONARY['suara_paslon_1']}
+- `suara_paslon_2`: {DICTIONARY['suara_paslon_2']}
+- `suara_paslon_3`: {DICTIONARY['suara_paslon_3']}
 
 - `chasil_hal_1`: Foto formulir C1 hasil halaman 1
 - `chasil_hal_2`: Foto formulir C1 hasil halaman 2
 - `chasil_hal_3`: Foto formulir C1 hasil halaman 3
 
-- `suara_sah`: Jumlah suara sah
-- `suara_total`: Jumlah suara total
-- `pemilih_dpt_j`: Jumlah pemilih DPT jumlah
-- `pemilih_dpt_l`: Jumlah pemilih DPT jenis laki-laki
-- `pemilih_dpt_p`: Jumlah pemilih DPT jenis perempuan
-- `pengguna_dpt_j`: Jumlah pengguna DPT jumlah
-- `pengguna_dpt_l`: Jumlah pengguna DPT jenis laki-laki
-- `pengguna_dpt_p`: Jumlah pengguna DPT jenis perempuan
-- `pengguna_dptb_j`: Jumlah pengguna DPTb jumlah
-- `pengguna_dptb_l`: Jumlah pengguna DPTb jenis laki-laki
-- `pengguna_dptb_p`: Jumlah pengguna DPTb jenis perempuan
-- `suara_tidak_sah`: Jumlah suara tidak sah
-- `pengguna_total_j`: Jumlah pengguna total jumlah
-- `pengguna_total_l`: Jumlah pengguna total jenis laki-laki
-- `pengguna_total_p`: Jumlah pengguna total jenis perempuan
-- `pengguna_non_dpt_j`: Jumlah pengguna non-DPT jumlah
-- `pengguna_non_dpt_l`: Jumlah pengguna non-DPT jenis laki-laki
-- `pengguna_non_dpt_p`: Jumlah pengguna non-DPT jenis perempuan
-- `psu`: Belum diketahui, [kabarin](https://twitter.com/zakiego) kalau ada yang
-  tahu!
-- `ts`: Waktu terakhir data diupdate oleh KPU
-- `status_suara`: Status suara
-- `status_adm`: Status administrasi
-- `url_page`: Kolom tambahan untuk mengetahui URL halaman web KPU yang
-  menampilkan data
-- `url_api`: Kolom tambahan untuk mengetahui URL API yang digunakan untuk
-  mengambil data
-- `updated_at`: Kolom tambahan untuk mengetahui kapan data terakhir kali
-  discrape dari web KPU
-- `created_at`: Kolom tambahan untuk mengetahui kapan data pertama kali
-  dimasukkan
-- `fetch_count`: Kolom tambahan untuk menghitung berapa kali data discrape dari
-  web KPU
+- `suara_sah`: {DICTIONARY['suara_sah']}
+- `suara_tidak_sah`: {DICTIONARY['suara_tidak_sah']}
+- `suara_total`: {DICTIONARY['suara_total']}
+- `pemilih_dpt_j`: {DICTIONARY['pemilih_dpt_j']}
+- `pemilih_dpt_l`: {DICTIONARY['pemilih_dpt_l']}
+- `pemilih_dpt_p`: {DICTIONARY['pemilih_dpt_p']}
+- `pengguna_dpt_j`: {DICTIONARY['pengguna_dpt_j']}
+- `pengguna_dpt_l`: {DICTIONARY['pengguna_dpt_l']}
+- `pengguna_dpt_p`: {DICTIONARY['pengguna_dpt_p']}
+- `pengguna_dptb_j`: {DICTIONARY['pengguna_dptb_j']}
+- `pengguna_dptb_l`: {DICTIONARY['pengguna_dptb_l']}
+- `pengguna_dptb_p`: {DICTIONARY['pengguna_dptb_p']}
+- `pengguna_total_j`: {DICTIONARY['pengguna_total_j']}
+- `pengguna_total_l`: {DICTIONARY['pengguna_total_l']}
+- `pengguna_total_p`: {DICTIONARY['pengguna_total_p']}
+- `pengguna_non_dpt_j`: {DICTIONARY['pengguna_non_dpt_j']}
+- `pengguna_non_dpt_l`: {DICTIONARY['pengguna_non_dpt_l']}
+- `pengguna_non_dpt_p`: {DICTIONARY['pengguna_non_dpt_p']}
+- `psu`: {DICTIONARY['psu']}
+- `ts`: {DICTIONARY['ts']}
+
+- `status_suara`: {DICTIONARY['status_suara']}
+- `status_adm`: {DICTIONARY['status_adm']}
+
+- `url_page`: {DICTIONARY['url_page']}
+- `url_api`: {DICTIONARY['url_api']}
+
+- `updated_at`: {DICTIONARY['updated_at']}
+- `created_at`: {DICTIONARY['created_at']}
+- `fetch_count`: {DICTIONARY['fetch_count']}

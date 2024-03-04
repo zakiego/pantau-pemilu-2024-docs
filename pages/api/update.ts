@@ -24,6 +24,12 @@ export default async function handler(
 		GROUP BY DATE(updated_at)
 		ORDER BY DATE(updated_at) DESC`;
 
+		// const dpr = await sql`
+		// SELECT TO_CHAR(updated_at, 'YYYY-MM-DD HH24:00:00') AS date, COUNT(id) AS count
+		// FROM pdpr_tps_list
+		// GROUP BY TO_CHAR(updated_at, 'YYYY-MM-DD HH24:00:00')
+		// ORDER BY date DESC`;
+
 		return { presiden, dpd, dpr };
 	});
 

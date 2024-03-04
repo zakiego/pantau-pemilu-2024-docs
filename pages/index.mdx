@@ -1,3 +1,36 @@
+import { useData } from "nextra/data";
+import { stringify } from "querystring";
+import { getLastUpdate, LastUpdateCard } from "../components/update";
+
+export const getStaticProps = async ({ params }) => {
+	const data = await getLastUpdate();
+
+    return {
+    	props: {
+    		// We add an `ssg` field to the page props,
+    		// which will be provided to the Nextra `useData` hook.
+    		ssg: {
+    			lastUpdate: data,
+    		},
+    	},
+    	// The page will be considered as stale and regenerated every 10 minutes
+    	revalidate: 600,
+    };
+
+};
+
+# Update Terakhir
+
+Berikut adalah waktu terakhir data discrape dari website KPU. Data diperbaharui
+secara otomatis setiap hari menggunakan
+[GitHub Actions](https://github.com/zakiego/pantau-pemilu-2024/actions/). Setiap
+baris data mungkin saja diperbaharui pada waktu yang berbeda, karena beberapa
+hal saat proses _scraping_.
+
+<LastUpdateCard />
+
+---
+
 # Pendahuluan
 
 Project ini berjalan untuk mengumpulkan data Pemilu 2024. Data yang diambil

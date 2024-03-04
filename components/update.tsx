@@ -64,17 +64,10 @@ const formatDateFromISOToLocale = (date: string) => {
 		return "-";
 	}
 
-	// set to gmt+7
-
-	const dateObj = new Date(date);
-	dateObj.setHours(dateObj.getHours() + 7);
-
 	return new Date(date).toLocaleDateString("id-ID", {
 		year: "numeric",
 		month: "long",
 		day: "numeric",
-		hour: "numeric",
-		minute: "numeric",
 	});
 };
 

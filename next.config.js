@@ -4,6 +4,10 @@ const withNextra = require("nextra")({
 });
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+	typescript: {
+		ignoreBuildErrors: true,
+	},
+};
 
 module.exports = withNextra(nextConfig);

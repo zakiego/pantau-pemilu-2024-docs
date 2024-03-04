@@ -1,5 +1,22 @@
 # Riwayat Pembaruan
 
+## 5 Maret 2024
+
+- Refactor data untuk DPR, sehingga beberapa tabel lama tidak lagi digunakan dan
+  diubah namanya:
+  1. `pdpr_dapil_calon_list` -> `_pdpr_dapil_calon_list_legacy`
+  1. `pdpr_dapil_list` -> `_pdpr_dapil_list_legacy`
+  1. `pdpr_tps` -> `_pdpr_tps_legacy`
+- Refactor data untuk DPR, beberapa tabel baru:
+  1. `pdpr_tps_list`: Daftar TPS untuk DPR
+  1. `pdpr_calon_list`: Daftar Calon DPR
+  1. `pdpr_tps_administrasi`: Administrasi Pemilihan DPR per TPS, berisi foto
+     formulir C1, jumlah suara sah, suara tidak sah, jumlah pemilih, dll
+  1. `pdpr_tps_caleg`: Perolehan suara DPR per TPS
+  1. `pdpr_tps_partai`: Perolehan suara partai politik per TPS
+- Fix grant select pada tabel `pdpr_*` untuk user `ropantau`
+  (https://github.com/zakiego/pantau-pemilu-2024-docs/issues/4)
+
 ## 24 Februari 2024
 
 - Perubahan host dari `103.76.121.53` ke `kawalpemilu.zakiego.com`

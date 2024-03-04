@@ -10,8 +10,8 @@ const schema = z.object({
 });
 
 export const getLastUpdate = async () => {
-	const resp = await fetch("http://localhost:3000/api/update").then((res) =>
-		res.json(),
+	const resp = await fetch("https://data-pemilu.vercel.app/api/update").then(
+		(res) => res.json(),
 	);
 
 	const data = schema.parse(resp);

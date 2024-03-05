@@ -1,5 +1,6 @@
 import { useData } from "nextra/data";
 import { z } from "zod";
+import { env } from "../lib/env";
 
 const schema = z.object({
 	data: z.object({
@@ -10,9 +11,12 @@ const schema = z.object({
 });
 
 export const getLastUpdate = async () => {
-	const resp = await fetch("https://data-pemilu.vercel.app/api/update").then(
-		(res) => res.json(),
-	);
+	const url =
+		env.NODE_ENV === "development"
+			? "http://localhost:3000/api/update"
+			: "https://data-pemilu.vercel.app/api/update";
+
+	const resp = await fetch(url).then((res) => res.json());
 
 	const data = schema.parse(resp);
 
@@ -40,7 +44,7 @@ export const LastUpdateCard = () => {
 				{data.map((item) => (
 					<div key={item.date} className="flex justify-between">
 						<p>{formatDateFromISOToLocale(item.date)}</p>
-						<p>{addDotsToNumber(item.count)} baris</p>
+						<p className="tabular-nums">{addDotsToNumber(item.count)} baris</p>
 					</div>
 				))}
 			</div>

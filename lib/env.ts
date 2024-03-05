@@ -6,6 +6,7 @@ const schema = z.object({
 	PGDATABASE: z.string(),
 	PGUSER: z.string(),
 	PGPASSWORD: z.string(),
+	NODE_ENV: z.enum(["development", "production"]).default("development"),
 });
 
 export const env = schema.parse(process.env);

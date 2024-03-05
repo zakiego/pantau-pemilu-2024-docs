@@ -11,10 +11,7 @@ const schema = z.object({
 });
 
 export const getLastUpdate = async () => {
-	const url =
-		env.NODE_ENV === "development"
-			? "http://localhost:3000/api/update"
-			: "https://data-pemilu.vercel.app/api/update";
+	const url = "https://data-pemilu.vercel.app/api/update";
 
 	const resp = await fetch(url).then((res) => res.json());
 
